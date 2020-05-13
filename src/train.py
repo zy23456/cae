@@ -87,6 +87,7 @@ def train(cfg: Namespace) -> None:
 
                     x = Variable(patches[:, :, i, j, :, :])
                     y = model(x)
+                    # 您好，请问压缩算法的损失计算是简单的mse计算吗？看了论文感觉应该是压缩比和失真度的权衡作为损失函数的。。还请您指点
                     loss = loss_criterion(y, x)
 
                     avg_loss_per_image += (1 / 60) * loss.item()
